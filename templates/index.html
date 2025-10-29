@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS SYSTEM</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <p>POS SYSTEM</p>
+        <li><a href="/"><i class="ri-home-4-line "></i>Dashboard</a></li>
+        <li><a href="{{url_for('product_list')}}" id="text"><i class="ri-align-justify"></i>Category</a></li>
+        <li><a href="{{ url_for('process_sale') }}" id="text1"><i class="ri-book-2-line"></i>Sale Proccess</a></li>
+        <li><a href="{{ url_for('final_receipt') }}"><i class="ri-search-line"></i>Receipt</a></li>
+        <li><a href="http://localhost:5000/products/add"><i class="ri-functions"></i>Add Product</a></li>
+        <div class="profile-container">
+            <img src="{{ url_for('static', filename='images/profile.png') }}" alt="Profile" class="profile-pic">
+        </div>
+    </nav>
+    <header>
+        <div class="breadcrumb">Dashboard / <a href="#">Analytics</a></div>
+        <div style="display:flex;gap:12px;align-items:center;">
+            <button class="btn_admin"><i class="fas fa-calendar"></i> Schedule Event (5)</button>
+            <div class="user-profile"><span>John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="box">
+            <p>PRODUCT (OUT SF STOCK)</p>
+            <h3>Item:1<i class="ri-store-3-line"></i></h3>
+
+        </div>
+        <div class="box">
+            <p class="style" style="color: gainsboro;">GATEGORY (COUNT)</p>
+            <h3>Item:3<i class="ri-list-unordered"></i></h3>
+        </div>
+
+        <div class="box">
+            <p class="style1" style="color: rgb(23, 182, 158);">OYMENT TYPE</p>
+            <h3>Item:2<i class="ri-visa-line"></i></h3>
+        </div>
+        <div class="box">
+            <a href="{{ url_for('admin') }}">
+                <p class="style2" style="color: white;">ADMIN ACCOUNT</p>
+            </a>
+            <h3>Item:3<i class="ri-account-box-line"></i></h3>
+        </div>
+        <div class="box">
+            <p>PLANDING REQUESTS</p>
+            <h3>0<i class="ri-message-3-line"></i></i></h3>
+        </div>
+        <div class="box">
+            <p class="style" style="color: gainsboro;">TOTAL(SALE)</p>
+            <h3>55600<i class="ri-exchange-dollar-fill"></i></h3>
+        </div>
+
+        <div class="box">
+            <p class="style1" style="color: rgb(23, 182, 158);">REQUEST SUCCESS</p>
+            <h3>0<i class="ri-verified-badge-line"></i></h3>
+        </div>
+        <div class="box">
+            <p class="style2" style="color: white;">CUSTOMER ACCOUNT</p>
+            <h3>2<i class="ri-group-line"></i></h3>
+        </div>
+
+        <div class="body">
+            <div class="container">
+                <h1>📊 Admin Dashboard</h1>
+
+                <div class="cards">
+                    <div class="card">
+                        <h2>{{ total_products }}</h2>
+                        <p>Total Products</p>
+                    </div>
+                    <div class="card">
+                        <h2>{{ total_stock }}</h2>
+                        <p>Total Stock</p>
+                    </div>
+                    <div class="card">
+                        <h2>{{ total_messages }}</h2>
+                        <p>Total Chat Messages</p>
+                    </div>
+                </div>
+
+                <div class="links">
+                    <a href="/products">Manage Products</a>
+                    <a href="/chat">Go to Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
