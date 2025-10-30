@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS SYSTEM</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <p>POS SYSTEM</p>
+        <li><a href="/"><i class="ri-home-4-line"></i>Dashboard</a></li>
+        <li><a href="{{ url_for('product_list') }}" id="text"><i class="ri-align-justify"></i>Category</a></li>
+        <li><a href="{{ url_for('process_sale') }}" id="text1"><i class="ri-book-2-line"></i>Sale Process</a></li>
+        <li><a href="{{ url_for('final_receipt') }}"><i class="ri-search-line"></i> Receipt</a></li>
+        <li><a href="http://localhost:5000/products/add"><i class="ri-functions"></i>Add Product</a></li>
+    </nav>
+    <header>
+        <div class="breadcrumb">Dashboard / <a href="#">Analytics</a></div>
+        <div style="display:flex;gap:12px;align-items:center;">
+            <button class="btn_admin"><i class="fas fa-calendar"></i> Schedule Event (5)</button>
+            <div class="user-profile"><span>John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+    {% if receipt %}
+    <div class="receipt-container">
+        <div class="receipt">
+            <h2>🧾 Product Receipt</h2>
+            <p><strong>Customer Name:</strong> {{ receipt.customer_name }}</p>
+            <p><strong>Product Name:</strong> {{ receipt.name }}</p>
+            <p><strong>Price:</strong> ${{ '%.2f'|format(receipt.price) }}</p>
+            <p><strong>Stock:</strong> {{ receipt.stock }}</p>
+            <p><strong>Date:</strong> {{ receipt.date }}</p>
+            <hr>
+            <p class="thanks">✨ Thank you! ✨</p>
+            <button onclick="window.print()" class="btn">Print Receipt 🖨️</button>
+            <a href="/products/final" class="btn">Create Another</a>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if not receipt %}
+    <div class="container_receipt">
+        <h1>Create Receipt</h1>
+        <form method="POST" action="/products/final">
+            <label>Customer Name:</label>
+            <input type="text" name="customer_name" placeholder="Enter customer name" required>
+
+            <label>Product Name:</label>
+            <input type="text" name="name" placeholder="Enter product name" required>
+
+            <label>Price:</label>
+            <input type="number" step="0.01" name="price" placeholder="Enter price" required>
+
+            <label>Stock:</label>
+            <input type="number" name="stock" placeholder="Enter stock" required>
+
+            <button type="submit">Generate Receipt</button>
+        </form>
+    </div>
+    {% endif %}
+</body>
+
+</html>
