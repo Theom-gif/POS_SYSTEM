@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS SYSTEM</title>
+
+    <!-- Use Flask url_for for CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <p>POS SYSTEM</p>
+        <li><a href="/"><i class="ri-home-4-line"></i>Dashboard</a></li>
+        <li><a href="{{ url_for('product_list') }}" id="text"><i class="ri-align-justify"></i>Category</a></li>
+        <li><a href="{{ url_for('process_sale') }}" id="text1"><i class="ri-book-2-line"></i>Sale Process</a></li>
+        <li><a href="{{ url_for('final_receipt') }}"><i class="ri-search-line"></i>Receipt</a></li>
+        <li><a href="{{ url_for('add_product') }}"><i class="ri-functions"></i>Add Product</a></li>
+    </nav>
+    <header>
+        <div class="breadcrumb">Dashboard / <a href="#">Analytics</a></div>
+        <div style="display:flex;gap:12px;align-items:center;">
+            <button class="btn_admin"><i class="fas fa-calendar"></i> Schedule Event (5)</button>
+            <div class="user-profile"><span>John Doe</span>
+                <div class="avatar">JD</div>
+            </div>
+        </div>
+    </header>
+    <main class="main_sale">
+        <div class="sale">
+            <img src="{{ url_for('static', filename='images/image.png') }}" alt="">
+            <h3>Virtuoso Latte</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque natus.</p>
+            <p>Price: 2$</p>
+            <div class="star">⭐⭐⭐⭐</div>
+            <button><a href="http://127.0.0.1:5000/products/view_sale">Order now</a></button>
+        </div>
+
+        <div class="sale">
+            <img src="{{ url_for('static', filename='images/image copy.png') }}" alt="">
+            <h3>Virtuoso Latte</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque natus.</p>
+            <p>Price: 2$</p>
+            <div class="star">⭐⭐⭐⭐</div>
+            <button class="Order">Order Now</button>
+        </div>
+
+        <div class="sale">
+            <img src="{{ url_for('static', filename='images/image copy 2.png') }}" alt="">
+            <h3>Virtuoso Latte</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque natus.</p>
+            <p>Price: 2$</p>
+            <div class="star">⭐⭐⭐⭐</div>
+            <button class="Order">Order Now</button>
+        </div>
+
+        <div class="sale">
+            <img src="{{ url_for('static', filename='images/image copy 3.png') }}" alt="">
+            <h3>Virtuoso Latte</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque natus.</p>
+            <p>Price: 2$</p>
+            <div class="star">⭐⭐⭐⭐</div>
+            <button class="Order">Order Now</button>
+        </div>
+
+        <div class="sale">
+            <img src="{{ url_for('static', filename='images/image copy 4.png') }}" alt="">
+            <h3>Virtuoso Latte</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque natus.</p>
+            <p>Price: 2$</p>
+            <div class="star">⭐⭐⭐⭐</div>
+            <button class="Order">Order Now</button>
+        </div>
+
+        <div class="sale">
+            <img src="{{ url_for('static', filename='images/image copy 5.png') }}" alt="">
+            <h3>Virtuoso Latte</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque natus.</p>
+            <p>Price: 2$</p>
+            <div class="star">⭐⭐⭐⭐</div>
+            <button class="Order">Order Now</button>
+        </div>
+    </main>
+</body>
+
+</html>
