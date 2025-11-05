@@ -1,0 +1,31 @@
+# Process about project #
+## folder ##
+### Templates ###
+- category.html
+- index.html
+- edit.html
+- add. html
+- final_receipt.html
+- view.html
+- process_sale.html
+- add.html
+- aba.html
+### static ###
+- images
+- style.css
+
+### index.html ###
+![alt text](image.png)
+- product out stock
+- category
+- admin account
+- total sale
+- request access
+- user account
+
+### category.html ###
+![alt text](image-1.png)
+
+- list store the products 
+- saler can edit, delete, research, or download.
+- 

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POS SYSTEM</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <p>POS SYSTEM</p>
+        <li><a href="/"><i class="ri-home-4-line"></i>Dashboard</a></li>
+        <li><a href="{{ url_for('product_list') }}" id="text"><i class="ri-align-justify"></i>Category</a></li>
+        <li><a href="{{ url_for('process_sale') }}" id="text1"><i class="ri-book-2-line"></i>Sale Process</a></li>
+        <li><a href="{{ url_for('final_receipt') }}"><i class="ri-search-line"></i> Receipt</a></li>
+        <li><a href="http://localhost:5000/products/add"><i class="ri-functions"></i>Add Product</a></li>
+    </nav>
+    <div class="container">
+
+        <!-- ==== HEADER ==== -->
+        <header>
+            <div class="breadcrumb">Dashboard / <a href="#">Analytics</a></div>
+            <div style="display:flex;gap:12px;align-items:center;">
+                <button class="btn_admin"><i class="fas fa-calendar"></i> Schedule Event (5)</button>
+                <div class="user-profile"><span>John Doe</span>
+                    <div class="avatar">JD</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- ==== MAIN GRID ==== -->
+        <section class="dashboard">
+
+            <!-- 1. Trending Items -->
+            <div class="card_admin">
+                <h3 class="card-title">Trending Items</h3>
+                <ul class="trending-list">
+                    <li class="trending-item">
+                        <div class="item-info">
+                            <div class="item-rank">1</div>
+                            <div class="item-details">
+                                <h4>Beautiful fireworks show in The New Year</h4>
+                                <p>Event • 2 days ago</p>
+                            </div>
+                        </div>
+                        <div class="item-stats">484 <span class="trend-up">up</span></div>
+                    </li>
+                    <li class="trending-item">
+                        <div class="item-info">
+                            <div class="item-rank">2</div>
+                            <div class="item-details">
+                                <h4>Jazzers indie music festival 2024</h4>
+                                <p>Music • 1 week ago</p>
+                            </div>
+                        </div>
+                        <div class="item-stats">341 <span class="trend-down">down</span></div>
+                    </li>
+                    <li class="trending-item">
+                        <div class="item-info">
+                            <div class="item-rank">3</div>
+                            <div class="item-details">
+                                <h4>Live Cabel's Sydney 2025</h4>
+                                <p>Concert • 3 days ago</p>
+                            </div>
+                        </div>
+                        <div class="item-stats">295 <span class="trend-down">down</span></div>
+                    </li>
+                    <li class="trending-item">
+                        <div class="item-info">
+                            <div class="item-rank">4</div>
+                            <div class="item-details">
+                                <h4>Artist Performing Festival in Aus...</h4>
+                                <p>Festival • 5 days ago</p>
+                            </div>
+                        </div>
+                        <div class="item-stats">127 <span class="trend-up">up</span></div>
+                    </li>
+                    <li class="trending-item">
+                        <div class="item-info">
+                            <div class="item-rank">5</div>
+                            <div class="item-details">
+                                <h4>[LIVE] Redbull Charity Event 2025</h4>
+                                <p>Charity • 1 day ago</p>
+                            </div>
+                        </div>
+                        <div class="item-stats">87 <span class="trend-up">up</span></div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- 2. Revenue -->
+            <div class="card">
+                <h3 class="card-title">Revenue</h3>
+                <div class="revenue-summary">
+                    <div class="revenue-amount">$128,000</div>
+                    <div class="revenue-change"><i class="fas fa-arrow-up"></i> +17.4%</div>
+                </div>
+                <div class="chart-placeholder">Line Chart: Revenue Trend (Last 30 Days)</div>
+                <div class="revenue-metrics">
+                    <div class="metric">
+                        <div class="metric-value">108,511</div>
+                        <div class="metric-label">Total Users</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value" style="color:var(--success);"></div>
+                        <div class="metric-label"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Sales Comparison (spans 2 cols on desktop) -->
+            <div class="card sales-comparison">
+                <div class="comparison-header">
+                    <div class="comparison-title">Sales Comparison</div>
+                    <div class="comparison-percentage">94%</div>
+                </div>
+                <div class="bar-chart">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div style="text-align:center;color:#777;font-size:12px;margin-top:8px;">This month vs Last month</div>
+            </div>
+
+            <!-- 4. Small stat cards (they occupy the remaining cells) -->
+            <div class="card stat-card">
+                <div class="stat-value">484k</div>
+                <div class="stat-label">Total Events</div>
+            </div>
+            <!-- <div class="card stat-card"><div class="stat-value">$1.2M</div><div class="stat-label">Total Revenue</div></div> -->
+
+            <!-- 5. Sales Summary (pie chart) – full width on all screens -->
+            <div class="card" style="grid-column:1/-1;">
+                <h3 class="card-title">Sales Summary</h3>
+                <div class="pie-chart">Pie Chart: Revenue by Category</div>
+                <div class="pie-legend">
+                    <div class="legend-item">
+                        <div class="legend-color legend-up"></div><span>UP</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color legend-decline"></div><span>Decline</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+</body>
+
+</html>
