@@ -33,13 +33,6 @@
 
 A simple Point Of Sale (POS) web application built with Flask and MySQL. It includes a dashboard, product management, a sale page with product cards, and a receipt generator.
 
-## Features
-- Dashboard: High-level stats cards (total products, total stock, messages placeholder).
-- Product Management: List, search, add, edit, delete products. CSV export.
-- Sale Page: Card grid of products with images and quick "Order Now" to the receipt page.
-- Receipt Generator: Simple form to generate a printable receipt. Print button supported by the browser.
-- Auth (basic demo): Registration and login form routes exist; not production-secure yet.
-
 ## Tech Stack
 - Backend: Flask (Blueprints), flask_mysqldb
 - Database: MySQL
