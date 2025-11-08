@@ -295,8 +295,9 @@ button:hover {
     border-radius: 10px;
     padding-top: 0px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.374);
-    height: 56vh;
+    height: 61vh;
     margin-left: 100vh;
+    padding-left: 34px;
 }
 
 .edit h1 {
